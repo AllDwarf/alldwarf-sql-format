@@ -13,13 +13,37 @@
   "main": "./dist/extension.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AllDwarf/AllDwarf-VSCode-Theme"
+    "url": "https://github.com/AllDwarf/alldwarf-sql-format"
   },
   "contributes": {
     "documentFormattingEditProvider": [
       {
         "language": "sql",
-        "scheme": "file"
+        "scheme": "file",
+        "provider": "./dist/extension.js"
+      }
+    ],
+    "documentRangeFormattingEditProvider": [
+      {
+        "language": "sql",
+        "scheme": "file",
+        "provider": "./dist/extension.js"
+      }
+    ],
+    "languages": [
+      {
+        "id": "sql",
+        "extensions": [
+          ".sql"
+        ],
+        "aliases": [
+          "SQL",
+          "MSSQL",
+          "TSQL",
+          "PLSQL",
+          "PL/SQL"
+        ],
+        "configuration": "./language-configuration.json"
       }
     ]
   },
